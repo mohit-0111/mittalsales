@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<style>
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+</style>
+{% block body %}
+<table class="table" >
+    <header id='header'>
+    <thead>
+        
+        <tr position="fixed">
+            <th scope="col">ID</th>
+            <th scope="col">ITEM</th>
+            <th scope="col">QUANTITY</th>
+            <th scope="col">DP</th>
+            <th scope="col">RETAIL</th>
+            <th scope="col">ACTIONS</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in acc %}
+        <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td >{{x.item}}</td>
+            <td >{{x.quantity}}</td>
+            <td style="color:blue"><b>{{x.dp}}</b></td>
+            <td style="color:red"><b>{{x.retail}}</b></td>  
+            
+            <td >
+                <a href="/voldelete/{{x.id}}" type="button" class="btn btn-outline-dark btn-sm mx-1" style="width: 28%">Delete</a>
+                <a href="/volupdate/{{x.id}}" type="button" class="btn btn-outline-dark btn-sm mx-1" style="width: 28%">Update</a>
+            </td>                           
+        </tr>
+        {% endfor %}
+
+
+    </tbody>
+</table>
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-5">
+    <form action="/volupdate/{{id}}" method="POST">
+        
+        
+        <div class="form-group">
+            <label for="exampleInputEmail1"><b style="color: rgb(27, 2, 2);">ITEM</b></label>
+            <input type="text" class="form-control" name="item" value="{{x[0][0]}}" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter item name">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"><b style="color: rgb(27, 2, 2);">QUANTITY</b></label>
+            <input type="text" class="form-control" name="qty" value="{{x[0][1]}}" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Quantity">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1"><b style="color: rgb(27, 2, 2);">DP</b></label>
+            <input type="number" class="form-control" name="dp" value="{{x[0][2]}}" id="exampleInputPassword1" placeholder="enter DP amount">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail1"><b style="color: rgb(27, 2, 2);">RETAIL</b></label>
+            <input type="text" class="form-control" name="rtl" value="{{x[0][3]}}" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Retail amount">
+
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary">Update<a href="voldetail.html"></a></button>
+    </form>
+</div>
+{% endblock body %}
